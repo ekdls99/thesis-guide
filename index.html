@@ -1682,7 +1682,8 @@
             if (localStorage.getItem(CL_KEY + key) === '1') {
                 item.classList.add('checked');
             }
-            item.addEventListener('click', () => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
                 const next = !item.classList.contains('checked');
                 item.classList.toggle('checked', next);
                 localStorage.setItem(CL_KEY + key, next ? '1' : '0');
